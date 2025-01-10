@@ -1,0 +1,108 @@
+/* News Header */
+.news-header {
+    background: linear-gradient(90deg, #ea4265, #ff750d);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .news-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .news-header .intro-text {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #f7f7f7;
+  }
+  
+  /* News Content Section */
+  .news-content {
+    padding: 40px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+  }
+  
+  .news-content h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* News Cards */
+  .news-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .news-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .news-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #ea4265;
+  }
+  
+  .news-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    padding: 15px;
+  }
+  
+  .news-card .news-description {
+    font-size: 16px;
+    color: #555;
+    padding: 0 15px 15px;
+  }
+  
+  .news-card .news-date {
+    font-size: 14px;
+    color: #888;
+    padding: 0 15px 15px;
+  }
+  
+  .read-more {
+    background: linear-gradient(90deg, #ea4265, #ff750d);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    cursor: pointer;
+  }
+  
+  .read-more:hover {
+    background: linear-gradient(90deg, #ff750d, #ea4265);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .news-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

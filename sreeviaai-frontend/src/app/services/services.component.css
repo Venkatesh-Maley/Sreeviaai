@@ -1,0 +1,92 @@
+/* Header of Services Section */
+.services-header {
+    text-align: center;
+    background: linear-gradient(90deg, #ea4265, #ff750d);
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .services-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .services-header .intro-text {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  /* Services Content */
+  .services-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .services-content h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Service Cards Layout */
+  .service-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  /* Individual Service Card */
+  .service-card {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+  }
+  
+  .service-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .service-card .service-description {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Design for Service Cards */
+  @media (max-width: 768px) {
+    .service-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .service-card {
+      width: 80%; /* Make the service card take 80% width on small screens */
+      margin-bottom: 20px;
+    }
+  
+    .services-header h1 {
+      font-size: 36px;
+    }
+  
+    .services-header .intro-text {
+      font-size: 18px;
+    }
+  }
+  

@@ -1,0 +1,150 @@
+.home-container {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 45px 30px; /* Increased padding for better spacing */
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 90%;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-family: 'Open Sans', sans-serif; /* Using Open Sans font */
+  font-size: 18px;
+  color: rgb(69, 69, 69);
+  margin-bottom: 30px;
+  line-height: 1.8;
+  font-weight: 400;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hero-description::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  z-index: -1;
+  opacity: 0.1; /* Subtle effect */
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.hero-description:hover::before {
+  opacity: 0.2;
+}
+
+.services {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  background-clip: text; /* Ensures the gradient is applied to the text */
+  color: transparent; /* Makes text color transparent so that the gradient is visible */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center; /* Center align the services text */
+  margin-top: 20px;
+}
+
+.explore-button {
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, padding 0.2s;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* Make the button a block element */
+  width: auto; /* Adjust button width */
+  text-align: center; /* Align text in the center */
+  margin-top: 20px; /* Add some spacing on top */
+}
+
+.explore-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+  max-width: 40%;
+  position: relative;
+}
+
+.hero-image:hover .hero-banner {
+  transform: scale(1.05);
+}
+
+.hero-banner {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-description {
+    font-size: 16px; /* Reduced font size for mobile */
+  }
+
+  .services {
+    font-size: 18px; /* Reduced font size for mobile */
+  }
+
+  .hero-image {
+    margin-top: 30px;
+  }
+
+  .hero-banner {
+    width: 90%;
+  }
+}
