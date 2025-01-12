@@ -1,92 +1,279 @@
+/* Updated Services Section Styling */
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
 /* Header of Services Section */
 .services-header {
-    text-align: center;
-    background: linear-gradient(90deg, #ea4265, #ff750d);
-    color: white;
-    padding: 40px;
-    border-radius: 10px;
-    font-family: 'Roboto', sans-serif;
-  }
+  text-align: center;
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.services-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.services-header .intro-text {
+  font-size: 20px;
+  margin-top: 10px;     
+}
+
+.services-content {
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(to bottom right, #ffffff, #ffffff);
+}
+
+.services-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.services-content .intro-text {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  perspective: 1000px;
+  cursor: pointer;
   
-  .services-header h1 {
-    font-size: 48px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  
-  .services-header .intro-text {
-    font-size: 20px;
-    margin-top: 10px;
-  }
-  
-  /* Services Content */
-  .services-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .services-content h2 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  /* Service Cards Layout */
-  .service-cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  
-  /* Individual Service Card */
-  .service-card {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 30%;
-  }
-  
-  .service-card h3 {
-    font-size: 24px;
-    color: #333;
-    margin-top: 20px;
-  }
-  
-  .service-card .service-description {
-    font-size: 18px;
-    color: #555;
-    margin-top: 10px;
-  }
-  
-  .service-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  /* Responsive Design for Service Cards */
-  @media (max-width: 768px) {
-    .service-cards {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .service-card {
-      width: 80%; /* Make the service card take 80% width on small screens */
-      margin-bottom: 20px;
-    }
-  
-    .services-header h1 {
-      font-size: 36px;
-    }
-  
-    .services-header .intro-text {
-      font-size: 18px;
-    }
-  }
-  
+}
+
+.service-card:hover .service-front {
+  transform: rotateY(-180deg);
+}
+
+.service-card:hover .service-back {
+  transform: rotateY(0);
+}
+
+.service-front, 
+.service-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.8s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-front {
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  color: white;
+  transform: rotateY(0);
+}
+
+.service-back {
+  background: #ffffff;
+  color: #2c3e50;
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-image {
+  width: 100%;
+  height: 180px; /* Fixed height to maintain uniformity across cards */
+  object-fit: cover; /* Ensures the image fills the area without distortion */
+  border-radius: 10px; /* Adds a smooth corner radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
+}
+
+.service-front h3, .service-back h4 {
+  font-size: 1.5rem;
+}
+
+
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  padding: 40px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+}
+
+.testimonials h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.testimonial-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.testimonial {
+  flex: 0 0 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  color: #333;
+}
+
+.client-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.quote {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.client-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+.workflow {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.workflow h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 20px;
+}
+
+.step {
+  background: #fff;
+  border: 2px solid #ea4265;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  width: 240px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step .icon {
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.step h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.step p {
+  font-size: 14px;
+  color: #666;
+}
+
+.step-image {
+  max-width: 120%; /* Adjust image size */
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.connector {
+  height: 2px;
+  width: 30px;
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  margin: auto;
+}
+
+/* Contact Us Section */
+.contact-button {
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, padding 0.2s;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.contact-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-us {
+  text-align: center;
+  padding: 40px;
+}
+
+.contact-us h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+

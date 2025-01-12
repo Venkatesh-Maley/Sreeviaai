@@ -10,7 +10,6 @@
   align-items: center;
   background-color: #ffffff;
   padding: 45px 30px; /* Increased padding for better spacing */
-  border-radius: 20px;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
@@ -116,35 +115,3 @@
   border-radius: 20px;
 }
 
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    padding: 50px 20px;
-    text-align: center;
-  }
-
-  .hero-text {
-    max-width: 100%;
-    margin-bottom: 30px;
-  }
-
-  .hero-text h1 {
-    font-size: 40px;
-  }
-
-  .hero-description {
-    font-size: 16px; /* Reduced font size for mobile */
-  }
-
-  .services {
-    font-size: 18px; /* Reduced font size for mobile */
-  }
-
-  .hero-image {
-    margin-top: 30px;
-  }
-
-  .hero-banner {
-    width: 90%;
-  }
-}
