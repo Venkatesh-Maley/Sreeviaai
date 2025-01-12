@@ -1,93 +1,95 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 10px 20px;
-  color: white;
-  background-color: #fff;
-  padding: 10px 20px;
-  position: relative;
-  border-bottom: 2px solid #ea4265; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-  position: sticky;  /* Sticky at the top */
-  top: 0;  /* Stick to the top of the page */
-  z-index: 1000; /* Ensure it stays above other content */
-}
-
-nav::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, #ea4265, #ff750d); /* Gradient effect for the line */
-}
-.navbar-logo .logo {
-  height: 60px;
+/* Navbar Logo */
+.navbar-brand .logo {
+  height: 40px;
   cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.navbar-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-menu li {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+/* Navbar Links */
+.nav-link {
+  font-size: 18px;
   font-weight: 500;
-  color: #333;
-  margin: 0 30px;
-  position: relative;
-  list-style: none;
-  display: inline-block;
-  cursor: pointer;
+  color: #333 !important;
+  transition: color 0.3s ease;
 }
 
-.navbar-menu li::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2.5px;
-  background-color: #ea4265; 
-  transition: width 0.3s ease;
+.nav-link:hover {
+  color: #ff3d0d !important;
 }
 
-.navbar-menu li a {
-  color: rgb(69, 69, 69);
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
+.navbar-nav .nav-item {
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
-.navbar-menu li:hover::after {
-  width: 100%;
+/* Optional: To remove the margin from the last item */
+.navbar-nav .nav-item:last-child {
+  margin-right: 0;
 }
 
-.navbar-menu li a:hover {
-  color: #ff3d0d;
-}
-
-.connect-button {
+/* Button Styles */
+.btn-gradient {
   background: linear-gradient(90deg, #ea4265, #ff750d);
   color: white;
+  font-size: 16px;
+  font-weight: bold;
   border: none;
   padding: 10px 20px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s, padding 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.connect-button:hover {
+.btn-gradient:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sticky Navbar and Shadow */
+.navbar {
+  border-bottom: 4px solid #ea4265;
+  position: sticky;
+  top: 0;
+  z-index: 1030; /* Ensure navbar stays on top of other elements */
+}
+
+/* Navbar Layout for Smaller Screens */
+@media (max-width: 991px) {
+  /* Ensuring the navbar has full-width space */
+  .navbar-expand-lg .navbar-collapse {
+    text-align: center;
+  }
+
+  /* Logo adjustment for smaller screens */
+  .navbar-brand .logo {
+    height: 35px;
+  }
+
+  .navbar-nav {
+    margin-top: 10px; /* Added spacing between links and button */
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 0;
+    margin-bottom: 10px; /* Vertical spacing between items on small screens */
+  }
+
+  .navbar-nav .nav-item:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Adjust logo size on smaller screens */
+  .navbar-brand .logo {
+    height: 30px;
+  }
+
+  /* Ensuring button is centered on mobile view */
+  .btn-gradient {
+    width: 100%; /* Button takes full width */
+    padding: 12px 0; /* Adjust padding for better appearance */
+    font-size: 18px;
+  }
 }

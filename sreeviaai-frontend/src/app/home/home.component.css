@@ -1,37 +1,44 @@
+/* General Container Styling */
 .home-container {
   font-family: 'Roboto', sans-serif;
   padding: 0;
   background-color: #f7f7f7;
 }
 
+/* Hero Section Styling */
 .hero-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  padding: 60px 30px; /* Increased padding for better spacing */
+  padding: 70px 20px; /* Adjusted for spacing */
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
+/* Hero Text Styling */
 .hero-text {
+  max-width: 1000px;
   max-width: 90%;
 }
 
 .hero-text h1 {
-  font-size: 60px;
+  font-size: 50px;
   background: linear-gradient(90deg, #ea4265, #ff750d);
   background-clip: text;
   color: transparent;
   font-weight: 700;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 2px;
   margin-bottom: 20px;
 }
 
+/* Description Text Styling */
 .hero-description {
-  font-family: 'Open Sans', sans-serif; /* Using Open Sans font */
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   color: rgb(69, 69, 69);
   margin-bottom: 30px;
@@ -54,7 +61,7 @@
   height: 100%;
   background: linear-gradient(90deg, #ea4265, #ff750d);
   z-index: -1;
-  opacity: 0.1; /* Subtle effect */
+  opacity: 0.1;
   border-radius: 10px;
   transition: opacity 0.3s ease;
 }
@@ -63,19 +70,21 @@
   opacity: 0.2;
 }
 
+/* Services Text Styling */
 .services {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 600;
   background: linear-gradient(90deg, #ea4265, #ff750d);
-  background-clip: text; /* Ensures the gradient is applied to the text */
-  color: transparent; /* Makes text color transparent so that the gradient is visible */
+  background-clip: text;
+  color: transparent;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-align: center; /* Center align the services text */
+  text-align: center;
   margin-top: 20px;
 }
 
+/* Explore Button Styling */
 .explore-button {
   background: linear-gradient(90deg, #ea4265, #ff750d);
   color: white;
@@ -100,18 +109,49 @@
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Hero Image Styling */
 .hero-image {
-  max-width: 40%;
+  max-width: 30%;
   position: relative;
-}
-
-.hero-image:hover .hero-banner {
-  transform: scale(1.05);
+  margin-top: 30px; /* Add margin-top to push image down */
 }
 
 .hero-banner {
   width: 100%;
   height: auto;
   border-radius: 20px;
+  transition: transform 0.2s ease-in-out;
 }
 
+.hero-image:hover .hero-banner {
+  transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column; /* Stack the content vertically on medium screens */
+    padding: 50px 10px; /* Adjust padding for medium screens */
+  }
+  .hero-text {
+    max-width: 90%;
+    text-align: center; /* Center text on smaller screens */
+  }
+  .hero-image {
+    max-width: 80%; /* Adjust image width */
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 36px; /* Smaller text size for mobile */
+  }
+  .hero-description {
+    font-size: 16px; /* Adjust font size for mobile */
+  }
+  .hero-image img {
+    width: 100%; /* Ensure image takes full width */
+    margin: 0 auto;
+  }
+}
