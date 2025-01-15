@@ -1,59 +1,34 @@
-/* Services Section Styling */
+/* General Styles */
 .news-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px;
   font-family: 'Roboto', sans-serif;
 }
 
-/* Header of Services Section */
 .news-header {
-  text-align: center;
   background: linear-gradient(90deg, #ea4265, #ff750d);
   color: white;
-  padding: 40px;
   border-radius: 10px;
 }
 
 .news-header h1 {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 2.5rem;
   text-transform: uppercase;
 }
 
 .news-header .intro-text {
-  font-size: 20px;
+  font-size: 1.2rem;
   margin-top: 10px;
 }
 
- /* News Content Section */
- .news-content {
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
 .news-content h2 {
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: 2rem;
   color: #333;
 }
 
 /* News Cards */
-.news-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
 .news-card {
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  overflow: hidden;
   transition: transform 0.3s ease;
 }
 
@@ -62,52 +37,52 @@
 }
 
 .news-image {
-  width: 100%;
   height: 200px;
   object-fit: cover;
   border-bottom: 2px solid #ea4265;
 }
 
-.news-card h3 {
-  font-size: 22px;
+.news-card .card-title {
+  font-size: 1.25rem;
   font-weight: 600;
   color: #333;
-  padding: 15px;
 }
 
-.news-card .news-description {
-  font-size: 16px;
+.news-description {
+  font-size: 1rem;
   color: #555;
-  padding: 0 15px 15px;
 }
 
-.news-card .news-date {
-  font-size: 14px;
+.news-date {
+  font-size: 0.9rem;
   color: #888;
-  padding: 0 15px 15px;
 }
 
 .read-more {
   background: linear-gradient(90deg, #ea4265, #ff750d);
   color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   border-radius: 5px;
-  margin-bottom: 15px;
-  margin-left: 30px;
-  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .read-more:hover {
   background: linear-gradient(90deg, #ff750d, #ea4265);
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .news-cards {
-    flex-direction: column;
-    align-items: center;
+  .news-header h1 {
+    font-size: 2rem;
+  }
+
+  .news-header .intro-text {
+    font-size: 1rem;
+  }
+
+  .news-content h2 {
+    font-size: 1.75rem;
   }
 }
