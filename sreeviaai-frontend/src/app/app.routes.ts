@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CareersComponent } from './careers/careers.component';
-import { ServicesComponent } from './services/services.component';
+import { ServicesComponent } from './company-services/services.component';
 import { NewsComponent } from './news/news.component';
 import { ConnectComponent } from './connect/connect.component';
 
