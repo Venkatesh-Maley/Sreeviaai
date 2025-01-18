@@ -1,5 +1,8 @@
 /* General Styles */
 .news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -22,8 +25,12 @@
 .news-content h2 {
   font-size: 2rem;
   color: #333;
+  padding: 20px;
 }
 
+.extra-posts {
+  display: none;
+}
 /* News Cards */
 .news-card {
   background: #ffffff;

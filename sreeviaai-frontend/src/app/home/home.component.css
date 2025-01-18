@@ -2,7 +2,7 @@
 .home-container {
   font-family: 'Roboto', sans-serif;
   padding: 0;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
 }
 
 /* Hero Section Styling */
@@ -12,7 +12,6 @@
   align-items: center;
   background-color: #ffffff;
   padding: 70px 20px; /* Adjusted for spacing */
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -141,6 +140,38 @@
   color: white; /* Maintain white color on hover */
 }
 
+.belief-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.belief-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.belief-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.belief-image img {
+  max-width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.belief-image img:hover {
+  transform: scale(1.05);
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 992px) {
   .hero-section {
@@ -167,5 +198,22 @@
   .hero-image img {
     width: 100%; /* Ensure image takes full width */
     margin: 0 auto;
+  }
+  .belief-title {
+    font-size: 2rem; /* Adjust title size for medium screens */
+  }
+
+  .belief-image img {
+    max-width: 100px; /* Adjust image size */
+  }
+}
+
+@media (max-width: 576px) {
+  .belief-title {
+    font-size: 1.6rem; /* Smaller title size for very small screens */
+  }
+  
+  .belief-image img {
+    max-width: 100px; /* Further reduce image size */
   }
 }

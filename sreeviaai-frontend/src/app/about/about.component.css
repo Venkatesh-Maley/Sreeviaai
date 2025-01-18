@@ -1,6 +1,9 @@
 /* General Styles */
 .about-us-container {
-    font-family: 'Roboto', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  font-family: 'Roboto', sans-serif;
   }
   
   .about-us-header {

@@ -1,4 +1,3 @@
-/* Updated Services Section Styling */
 .services-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -6,7 +5,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-/* Header of Services Section */
 .services-header {
   text-align: center;
   background: linear-gradient(90deg, #ea4265, #ff750d);
@@ -23,95 +21,161 @@
 
 .services-header .intro-text {
   font-size: 20px;
-  margin-top: 10px;     
+  margin-top: 10px;
 }
 
 .services-content {
-  margin: 50px auto;
-  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 10px;
+}
+
+/* Header Styles */
+.services-head {
   text-align: center;
-  background: linear-gradient(to bottom right, #ffffff, #ffffff);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border-radius: 16px;
+  margin-bottom: 50px;
 }
 
-.services-content h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #2c3e50;
-  margin-bottom: 20px;
+.services-head h1 {
+  font-size: 40px;
 }
 
-.services-content .intro-text {
-  font-size: 1.2rem;
-  color: #7f8c8d;
-  margin-bottom: 40px;
+.services-head .intro-text {
+  font-size: 18px;
+  margin-top: 10px;
 }
 
-.service-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.service-card {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  perspective: 1000px;
-  cursor: pointer;
-  
-}
-
-.service-card:hover .service-front {
-  transform: rotateY(-180deg);
-}
-
-.service-card:hover .service-back {
-  transform: rotateY(0);
-}
-
-.service-front, 
-.service-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.8s;
+/* Service Cards */
+.services .service {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-front {
-  background: linear-gradient(90deg, #ea4265, #ff750d);
-  color: white;
-  transform: rotateY(0);
+.services .service:hover {
+  transform: translateY(-10px);
 }
 
-.service-back {
-  background: #ffffff;
-  color: #2c3e50;
-  transform: rotateY(180deg);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.services .service:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.service-content {
+  flex: 1;
+  padding: 30px;
+  text-align: left;
+}
+
+.service-content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #ea4265;
+}
+
+.service-content p {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .service-image {
+  flex: 1;
+  max-width: 30%;
+  padding: 10px;
+}
+
+.service-image img {
   width: 100%;
-  height: 180px; /* Fixed height to maintain uniformity across cards */
-  object-fit: cover; /* Ensures the image fills the area without distortion */
-  border-radius: 10px; /* Adds a smooth corner radius */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
+  border-radius: 16px;
 }
 
-.service-front h3, .service-back h4 {
-  font-size: 1.5rem;
+@media (max-width: 768px) {
+  .services .service {
+    flex-direction: column;
+  }
+
+  .services-header h1 {
+    font-size: 32px;
+  }
+  .services .service-image {
+    display: none;
+  }
+  .testimonial {
+    flex: 0 0 180px;
+  }
+  .testimonial-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .testimonials {
+    padding: 10px;
+  } 
 }
 
+.read-more {
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
 
+.read-more:hover {
+  background: linear-gradient(90deg, #ff750d, #ea4265);
+}
 
-/* General Styles */
+/* Service Hover with Gradient Border */
+.services .service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative; /* Needed for the pseudo-element */
+}
+
+/* Add the gradient border using a pseudo-element */
+.services .service::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* Cover the entire card */
+  border-radius: 16px; /* Match the card's border radius */
+  padding: 2px; /* Space for the gradient border */
+  background: linear-gradient(90deg, #ea4265, #ff750d);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Initially hidden */
+}
+
+/* Show the gradient border on hover */
+.services .service:hover::before {
+  opacity: 1;
+}
+
+.services .service-content,
+.services .service-image {
+  position: relative;
+  z-index: 1; /* Ensure content stays above the gradient border */
+}
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -119,10 +183,9 @@ body {
   line-height: 1.6;
 }
 
-/* Testimonials Section */
 .testimonials {
   background: linear-gradient(90deg, #ea4265, #ff750d);
-  padding: 40px;
+  padding: 30px;
   text-align: center;
   color: white;
   border-radius: 10px;
@@ -141,7 +204,6 @@ body {
 }
 
 .testimonial {
-  flex: 0 0 300px;
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -169,113 +231,32 @@ body {
   color: #555;
 }
 
-.workflow {
+.core-services {
   margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.workflow h2 {
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.steps {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 50px;
-  padding: 20px;
-}
-
-.step {
-  background: #fff;
-  border: 2px solid #ea4265;
-  border-radius: 10px;
   padding: 40px;
-  text-align: center;
-  width: 240px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.step .icon {
-  background: linear-gradient(90deg, #ea4265, #ff750d);
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 10px;
-}
-
-.step h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.step p {
-  font-size: 14px;
-  color: #666;
-}
-
-.step-image {
-  max-width: 120%; /* Adjust image size */
-  height: auto;
+  background: #f9f9f9;
   border-radius: 10px;
-  margin-top: 10px;
 }
 
-
-
-.connector {
-  height: 2px;
-  width: 30px;
-  background: linear-gradient(90deg, #ea4265, #ff750d);
-  margin: auto;
-}
-
-/* Contact Us Section */
-.contact-button {
-  background: linear-gradient(90deg, #ea4265, #ff750d);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s, padding 0.2s;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: auto;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.contact-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-.contact-us {
-  text-align: center;
-  padding: 40px;
-}
-
-.contact-us h2 {
+.core-services h2 {
   font-size: 36px;
   margin-bottom: 20px;
+  color: #333;
+  text-align: center;
 }
 
+.service-item {
+  margin-bottom: 30px;
+}
 
+.service-item h3 {
+  font-size: 24px;
+  color: #ea4265;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+}
