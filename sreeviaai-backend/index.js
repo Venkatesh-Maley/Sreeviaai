@@ -4,7 +4,6 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 
-const authRouter = require('./routers/authRouter')
 const connectRouter = require('./routers/connectRouter'); 
 
 const app = express()
@@ -23,8 +22,7 @@ mongoose
         console.log(err);
     });
 
-app.use('/api/auth',authRouter);
-app.use('/api/connect', connectRouter); // Assuming you have defined your routes here
+app.use('/api/connect', connectRouter);
 
 
 app.get('/',(req,res)=>{

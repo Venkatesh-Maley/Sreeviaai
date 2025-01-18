@@ -1,28 +1,6 @@
 // src/middlewares/validator.js
 const Joi = require('joi');
 
-exports.signupSchema = Joi.object({
-    email: Joi.string()
-        .min(6)
-        .max(60)
-        .required()
-        .email({
-            tlds: { allow: ['com', 'net'] },
-        }),
-    password: Joi.string().required(),
-});
-
-exports.signinSchema = Joi.object({
-    email: Joi.string()
-        .min(6)
-        .max(60)
-        .required()
-        .email({
-            tlds: { allow: ['com', 'net'] },
-        }),
-    password: Joi.string().required(),
-});
-
 exports.connectSchema = Joi.object({
     name: Joi.string().min(3).max(100).required().messages({
         'string.base': 'Name should be a string',
